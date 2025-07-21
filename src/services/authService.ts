@@ -56,6 +56,7 @@ const authService = {
       const response = await api.get<User>('/movies/auth/profile/');
       return response.data;
     } catch (_error) {
+      console.log('Error fetching user profile:', _error);
       return null;
     }
   },

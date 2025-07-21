@@ -1,6 +1,6 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import React, {createContext, useState, useEffect, type ReactNode, useCallback} from 'react';
 import movieService from '../services/movieService';
-import { MovieFormData, MovieState } from '../types/movie';
+import type {MovieFormData, MovieState} from '../types/movie';
 
 // Define the shape of the context
 interface MovieContextType extends MovieState {
@@ -31,7 +31,7 @@ export const MovieProvider: React.FC<MovieProviderProps> = ({ children }) => {
   });
 
   // Fetch all movies
-  const fetchMovies = async () => {
+  const fetchMovies = useCallback(async () => {
     setState({ ...state, isLoading: true, error: null });
     try {
       const movies = await movieService.getAllMovies();
@@ -49,7 +49,7 @@ export const MovieProvider: React.FC<MovieProviderProps> = ({ children }) => {
         error: 'Failed to fetch movies',
       });
     }
-  };
+  }, [state]);
 
   // Fetch user's movies
   const fetchUserMovies = async () => {
@@ -171,7 +171,7 @@ export const MovieProvider: React.FC<MovieProviderProps> = ({ children }) => {
   // Fetch movies on mount
   useEffect(() => {
     fetchMovies();
-  }, []);
+  }, [fetchMovies]);
 
   // Provide the movie context to children
   return (
