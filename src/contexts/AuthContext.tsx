@@ -1,6 +1,6 @@
-import React, { createContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useState, useEffect, type ReactNode } from 'react';
 import authService from '../services/authService';
-import { AuthState, LoginCredentials, RegisterCredentials } from '../types/auth';
+import type {AuthState, LoginCredentials, RegisterCredentials} from '../types/auth';
 
 // Define the shape of the context
 interface AuthContextType extends AuthState {
