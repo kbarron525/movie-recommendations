@@ -8,21 +8,24 @@ ENV DJANGO_SETTINGS_MODULE=movie_backend.settings
 # Set work directory
 WORKDIR /app
 
-# Install dependencies
+# Install system dependencies
+RUN apt-get update && apt-get install -y netcat-openbsd && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
 COPY backend/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project
 COPY backend/ .
 
+# Copy entrypoint.sh and make it executable
+COPY docker/entrypoint.backend.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
 # Create a non-root user
 RUN adduser --disabled-password --gecos '' django-user && \
     chown -R django-user:django-user /app
 USER django-user
-
-# Run entrypoint.sh
-COPY docker/entrypoint.backend.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
 
