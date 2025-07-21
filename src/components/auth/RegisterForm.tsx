@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
-import { RegisterCredentials } from '../../types/auth';
+import type {RegisterCredentials} from '../../types/auth';
 
 interface RegisterFormProps {
   onSuccess?: () => void;

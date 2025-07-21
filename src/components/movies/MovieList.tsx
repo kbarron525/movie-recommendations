@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useMovie } from '../../hooks/useMovie';
-import { Movie } from '../../types/movie';
+import type {Movie} from '../../types/movie';
 import { GenreLabels } from '../../types/movie';
 
 interface MovieListProps {

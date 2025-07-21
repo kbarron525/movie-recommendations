@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../hooks/useAuth';
-import { LoginCredentials } from '../../types/auth';
+import type {LoginCredentials} from '../../types/auth';
 
 interface LoginFormProps {
   onSuccess?: () => void;

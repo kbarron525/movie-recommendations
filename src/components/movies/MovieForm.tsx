@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useMovie } from '../../hooks/useMovie';
-import { Movie, MovieFormData, GenreLabels } from '../../types/movie';
+import {type Movie, type MovieFormData, GenreLabels } from '../../types/movie';
 
 interface MovieFormProps {
   movie?: Movie;

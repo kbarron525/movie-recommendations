@@ -1,5 +1,5 @@
 import api from './api';
-import { Movie, MovieFormData } from '../types/movie';
+import type {Movie, MovieFormData} from '../types/movie';
 
 // Movie service
 const movieService = {
