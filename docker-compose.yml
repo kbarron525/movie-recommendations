@@ -21,6 +21,8 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.backend
+      args:
+        BUILDTIME_CACHE_BUST: ${BUILDTIME_CACHE_BUST:-$(date +%s)}
     volumes:
       - ./backend:/app
       - static_volume:/app/staticfiles
@@ -36,6 +38,8 @@ services:
     build:
       context: .
       dockerfile: docker/Dockerfile.frontend
+      args:
+        BUILDTIME_CACHE_BUST: ${BUILDTIME_CACHE_BUST:-$(date +%s)}
     volumes:
       - ./src:/app/src
       - ./public:/app/public
