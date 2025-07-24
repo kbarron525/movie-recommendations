@@ -65,7 +65,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
             value={credentials.username}
             onChange={handleChange}
             disabled={isLoading}
-            placeholder="Enter your username"
+            placeholder="Please enter your username"
             required
           />
         </div>
@@ -78,7 +78,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSuccess }) => {
             value={credentials.password}
             onChange={handleChange}
             disabled={isLoading}
-            placeholder="Enter your password"
+            placeholder="Please enter your password"
             required
           />
         </div>
