@@ -16,7 +16,7 @@ const LoginPage: React.FC = () => {
         <LoginForm onSuccess={handleLoginSuccess} />
         <div className="auth-links">
           <p>
-            Don't have an account? <Link to="/register">Register</Link>
+            Don&apos;t have an account? <Link to="/register">Register</Link>
           </p>
         </div>
       </div>

@@ -4,7 +4,7 @@ import LoginPage from './pages/LoginPage'
 import RegisterPage from './pages/RegisterPage'
 import { AuthProvider } from './contexts/AuthContext'
 
-function App() {
+const App = () => {
 
   return (
     <AuthProvider>

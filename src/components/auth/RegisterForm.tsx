@@ -60,75 +60,75 @@ const RegisterForm: React.FC<RegisterFormProps> = ({onSuccess}) => {
     };
 
     return (
-        <div className="register-form">
-            <h2>Register</h2>
-            <form onSubmit={handleSubmit}>
-                {(formError || error) && (
-                    <div className="error-message">
-                        {formError || error}
-                    </div>
+      <div className="register-form">
+        <h2>Register</h2>
+        <form onSubmit={handleSubmit}>
+          {(formError || error) && (
+            <div className="error-message">
+              {formError || error}
+            </div>
                 )}
-                <div className="form-group">
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={credentials.username}
-                        onChange={handleChange}
-                        disabled={isLoading}
-                        placeholder="Choose a username"
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={credentials.email}
-                        onChange={handleChange}
-                        disabled={isLoading}
-                        placeholder="Enter your email"
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={credentials.password}
-                        onChange={handleChange}
-                        disabled={isLoading}
-                        placeholder="Create a password"
-                        required
-                    />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="password_confirm">Confirm Password</label>
-                    <input
-                        type="password"
-                        id="password_confirm"
-                        name="password_confirm"
-                        value={credentials.password_confirm}
-                        onChange={handleChange}
-                        disabled={isLoading}
-                        placeholder="Confirm your password"
-                        required
-                    />
-                </div>
-                <button
-                    type="submit"
-                    className="btn btn-primary"
-                    disabled={isLoading}
-                >
-                    {isLoading ? 'Registering...' : 'Register'}
-                </button>
-            </form>
-        </div>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={credentials.username}
+              onChange={handleChange}
+              disabled={isLoading}
+              placeholder="Choose a username"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={credentials.email}
+              onChange={handleChange}
+              disabled={isLoading}
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={credentials.password}
+              onChange={handleChange}
+              disabled={isLoading}
+              placeholder="Create a password"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password_confirm">Confirm Password</label>
+            <input
+              type="password"
+              id="password_confirm"
+              name="password_confirm"
+              value={credentials.password_confirm}
+              onChange={handleChange}
+              disabled={isLoading}
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="btn btn-primary"
+            disabled={isLoading}
+          >
+            {isLoading ? 'Registering...' : 'Register'}
+          </button>
+        </form>
+      </div>
     );
 };
 
